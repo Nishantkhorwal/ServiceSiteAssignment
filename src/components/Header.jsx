@@ -121,10 +121,10 @@ function Header({userInfo}) {
     <h3 className=' text-5xl mb-4 lg:text-5xl  font-dancing bg-gradient-to-l  from-blue-700 to-green-400 text-transparent bg-clip-text inline-block font-extrabold' data-aos="fade-down">
       {userInfo?.title}
     </h3>
-    <h1 className='mb-10 lg:text-7xl text-2xl font-extrabold text-white font-signika'>
+    <h1 className='mb-10 lg:mb-4  lg:text-7xl text-2xl font-extrabold text-white font-signika'>
       Better Design For Your Digital Products
     </h1>
-    <p className='mb-8 md:text-lg lg:pe-44 text-sm lg:text-lg font-semibold text-white'>
+    <p className='mb-8 md:mb-3 lg:mb-8 lg:pe-44 text-sm lg:text-lg font-semibold text-white'>
     {userInfo?.description}</p>
                                  
     <button type="button" className="text-white w-44  font-medium rounded-full text-xl px-5 py-2.5 text-center me-2 mb-2 bg-gradient-to-l  from-blue-700 to-green-400 ">Get Started</button>
