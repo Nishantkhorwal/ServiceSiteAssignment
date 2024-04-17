@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Header from '../components/Header';
-import Hero from '../components/Hero';
 import About from '../components/About';
 import Services from '../components/Services';
 import Skills from '../components/Skills';
@@ -46,6 +45,7 @@ function Home() {
 
 
 // filtering all the data from the API
+
     const sortedFilteredSkills = user?.skills?.filter((item) => item.enabled)?.sort((a, b) => a.sequence - b.sequence);
     const sortedFilteredProject = user?.projects?.filter((item) => item.enabled)?.sort((a, b) => a.sequence - b.sequence);
     const filteredServices = user?.services?.filter((item) => item.enabled);
@@ -59,15 +59,14 @@ function Home() {
     }
     return (
         <>
-            <Header />
-            <Hero />
-            <About />
-            <Skills />
-            <Projects />
-            <Services />
-            <Timeline />
-            <Testimonial />
-            <Contact />
+            <Header userInfo={user.about} />
+            <About about= {user.about} services={filteredServices} />
+            <Skills skills={sortedFilteredSkills} />
+            <Projects projects={sortedFilteredProject} />
+            <Services services={filteredServices} />
+            <Timeline experience={filteredExperience} />
+            <Testimonial testimonials={filteredTestimonials} />
+            <Contact userInfo={user.about}  />
         </>
     );
 }
